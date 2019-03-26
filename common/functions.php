@@ -28,7 +28,10 @@ function env_is_cli() {
 }
 
 function is_admin(){
+	// Leave the safeguarding to reverse-proxy.
+	return true;
 
+	/*
     if (env_is_cli()) {
         // On the command-line, there is no notion of admin
         return true;
@@ -53,6 +56,7 @@ function is_admin(){
 
     // If ADMIN_USER is empty so everyone is an admin
     return true;
+	 */
 }
 
 
