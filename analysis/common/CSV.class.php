@@ -19,7 +19,9 @@ class CSV {
     }
 
     public function __construct($filename, $outputformat = 'csv') {
-        $this->fp = fopen(dirname(__DIR__) . "/$filename", "w");
+        if (strpos($filename, "php://") === false)
+           $filename = dirname(__DIR__) . "/$filename";
+        $this->fp = fopen($filename, "w");
         fputs($this->fp, chr(239) . chr(187) . chr(191));   // UTF-8 BOM
         if ($outputformat == 'csv') {
             $this->delimiter = ',';
