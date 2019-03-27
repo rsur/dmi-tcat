@@ -21,6 +21,8 @@ define('CAPTUREROLES', serialize(array('track')));
  * The user(s) who can add and modify query bins. 
  * All users should exist in your htaccess authentication configuration.
  * Leave the array empty if you do not want to restrict access to the query manager - which, of course, is a security risk.
+ *
+ * In containerized setup, this constant is completely ignored.
  */
 define('ADMIN_USER', serialize(array('admin', 'admin2')));
 
